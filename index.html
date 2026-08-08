@@ -1,78 +1,30 @@
-```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Buse'me, hayatıma...</title>
-.hearts {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
-}
 
-.hearts span {
-    position: absolute;
-    color: rgba(255, 245, 248, 0.28);
-    font-size: 16px;
-    animation: floatHeart 8s ease-in-out infinite;
-}
-
-.hearts span:nth-child(1) { left: 8%; top: 15%; animation-delay: 0s; }
-.hearts span:nth-child(2) { left: 18%; top: 72%; animation-delay: 1s; }
-.hearts span:nth-child(3) { left: 31%; top: 28%; animation-delay: 2s; }
-.hearts span:nth-child(4) { left: 44%; top: 82%; animation-delay: 3s; }
-.hearts span:nth-child(5) { left: 57%; top: 12%; animation-delay: 1.5s; }
-.hearts span:nth-child(6) { left: 68%; top: 65%; animation-delay: 2.5s; }
-.hearts span:nth-child(7) { left: 79%; top: 30%; animation-delay: 4s; }
-.hearts span:nth-child(8) { left: 91%; top: 78%; animation-delay: 3.5s; }
-.hearts span:nth-child(9) { left: 12%; top: 45%; animation-delay: 5s; }
-.hearts span:nth-child(10) { left: 38%; top: 55%; animation-delay: 4.5s; }
-.hearts span:nth-child(11) { left: 73%; top: 48%; animation-delay: 6s; }
-.hearts span:nth-child(12) { left: 86%; top: 10%; animation-delay: 2s; }
-
-@keyframes floatHeart {
-    0%, 100% {
-        transform: translateY(0) rotate(-5deg);
-        opacity: 0.2;
-    }
-
-    50% {
-        transform: translateY(-12px) rotate(5deg);
-        opacity: 0.4;
-    }
-}
-                <div class="hearts">
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-    <span>♡</span>
-</div>
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            
         }
 
         body {
             min-height: 100vh;
             font-family: Georgia, "Times New Roman", serif;
-            background: #d9a6b3;
+            background: linear-gradient(
+                135deg,
+                #e8b8c4 0%,
+                #d9a6b3 50%,
+                #edc7d0 100%
+            );
             color: #fff8fa;
             overflow: hidden;
-
         }
 
         .page {
@@ -95,37 +47,45 @@
             max-height: 90vh;
             overflow-y: auto;
             padding: 25px;
+            scrollbar-width: none;
+        }
+
+        .content::-webkit-scrollbar {
+            display: none;
         }
 
         h1 {
-            font-size: clamp(32px, 6vw, 58px);
+            font-size: clamp(34px, 6vw, 60px);
             font-weight: 400;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             letter-spacing: 1px;
         }
 
         h2 {
-            font-size: clamp(25px, 4vw, 40px);
+            font-size: clamp(28px, 5vw, 44px);
             font-weight: 400;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
         }
 
         p {
             font-size: clamp(17px, 2vw, 21px);
             line-height: 1.9;
-            margin-bottom: 22px;
+            margin-bottom: 23px;
+            font-weight: 400;
         }
 
         .highlight {
             font-size: clamp(21px, 3vw, 30px);
+            line-height: 1.6;
             font-weight: bold;
-            margin: 35px 0;
+            margin: 38px 0;
         }
 
         .button {
             display: inline-block;
-            margin-top: 25px;
-            padding: 13px 30px;
+            margin-top: 20px;
+            padding: 13px 32px;
             border: 1px solid rgba(255,255,255,0.7);
             border-radius: 30px;
             background: rgba(255,255,255,0.12);
@@ -133,24 +93,28 @@
             font-family: inherit;
             font-size: 16px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.35s ease;
         }
 
         .button:hover {
             background: rgba(255,255,255,0.25);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
-        .small {
-            font-size: 15px;
-            opacity: 0.8;
-            margin-top: 35px;
+        .final {
+            max-width: 800px;
+        }
+
+        .final .highlight {
+            font-size: clamp(23px, 4vw, 34px);
+            line-height: 1.7;
+            margin-top: 45px;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(15px);
+                transform: translateY(18px);
             }
 
             to {
@@ -160,622 +124,714 @@
         }
 
         @media (max-width: 600px) {
+
+            .page {
+                padding: 25px 18px;
+            }
+
             .content {
                 padding: 15px;
+                max-height: 92vh;
             }
 
             p {
-                line-height: 1.7;
+                line-height: 1.75;
+                margin-bottom: 20px;
+            }
+
+            .highlight {
+                margin: 32px 0;
             }
         }
+
     </style>
 </head>
 
 <body>
 
-    <!-- 01 -->
-    <section class="page active">
-        <div class="content">
-            <h1>Buse'me, hayatıma...</h1>
 
-            <p>
-                Bunu sana nasıl anlatmam gerektiğini çok düşündüm.
-            </p>
+<!-- ========================= -->
+<!-- 01 -->
+<!-- ========================= -->
 
-            <p>
-                Yüz yüze söylesem belki bazı şeyleri yine eksik anlatacaktım.
-            </p>
+<section class="page active">
 
-            <p>
-                O yüzden bu kez, aklımdan geçenleri olduğu gibi bırakmak istedim.
-            </p>
+    <div class="content">
 
-            <p>
-                Burada sana söylemek istediğim birkaç şey var.
-            </p>
+        <h1>Buse'me, hayatıma...</h1>
 
-            <button class="button" onclick="nextPage()">Devam et →</button>
+        <p>
+            Bunu sana nasıl anlatmam gerektiğini çok düşündüm.
+        </p>
+
+        <p>
+            Yüz yüze söylesem belki bazı şeyleri yine eksik anlatacaktım.
+        </p>
+
+        <p>
+            O yüzden bu kez, aklımdan geçenleri olduğu gibi bırakmak istedim.
+        </p>
+
+        <p>
+            Burada sana söylemek istediğim birkaç şey var.
+        </p>
+
+        <button class="button" onclick="nextPage()">
+            Devam et →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 02 -->
+<!-- ========================= -->
+
+<section class="page">
+
+    <div class="content">
+
+        <h2>Önce güzel şeylerden başlayalım.</h2>
+
+        <p>
+            Çünkü bizim hikâyemiz sadece son zamanlarda yaşananlardan ibaret değil.
+        </p>
+
+        <p>
+            Buse deyince aklıma yağmurlar geliyor.
+        </p>
+
+        <p>
+            Birlikte güldüğümüz o saçma sapan şeyler geliyor.
+            Başkasının anlamayacağı, bizim kendi aramızda komik bulduğumuz şeyler...
+        </p>
+
+        <p>
+            En çok da yanında kendim olabilmek geliyor.
+        </p>
+
+        <p>
+            Hiçbir şeyi düşünmeden, olduğum gibi.
+        </p>
+
+        <p>
+            Ve içimin garip bir şekilde huzurla dolması.
+        </p>
+
+        <p>
+            Mesela bir keresinde çok yağmur yağıyordu.
+            Arabanın camları açıktı, yolda gidiyorduk.
+            Yanımızdan bir araba hızlı geçti ve bütün arabanın içi çamurlu yağmur suyuyla doldu.
+        </p>
+
+        <p>
+            Sinirli olmamız gerekiyordu fakat biz gülmekten kendimizi alamamıştık.
+        </p>
+
+        <p>
+            Şimdi düşününce, sanırım bizim en güzel taraflarımızdan biri de buydu.
+        </p>
+
+        <p>
+            En saçma anlarda bile birlikte gülebilmek.
+        </p>
+
+        <p>
+            Belki dışarıdan bakınca çok büyük şeyler değiller.
+        </p>
+
+        <p>
+            Ama benim için değerli olan da biraz bu zaten.
+        </p>
+
+        <p>
+            Seninle yaşadığım en sıradan anların bile bende bir karşılığı var.
+        </p>
+
+        <p>
+            Ve dönüp baktığımda...
+        </p>
+
+        <div class="highlight">
+            İyi ki yaşamışız.
         </div>
-    </section>
+
+        <button class="button" onclick="nextPage()">
+            Devam et →
+        </button>
+
+    </div>
+
+</section>
 
 
-    <!-- 02 -->
-    <section class="page">
-        <div class="content">
-            <h2>Önce güzel şeylerden başlayalım.</h2>
+<!-- ========================= -->
+<!-- 03 -->
+<!-- ========================= -->
 
-            <p>
-                Çünkü bizim hikâyemiz sadece son zamanlarda yaşananlardan ibaret değil.
-            </p>
+<section class="page">
 
-            <p>
-                Buse deyince aklıma yağmurlar geliyor.
-            </p>
+    <div class="content">
 
-            <p>
-                Birlikte güldüğümüz o saçma sapan şeyler geliyor.
-                Başkasının anlamayacağı, bizim kendi aramızda komik bulduğumuz şeyler...
-            </p>
+        <h2>Bazı şeyleri doğru yapamadım.</h2>
 
-            <p>
-                En çok da yanında kendim olabilmek geliyor.
-            </p>
-            
-<img src="./WhatsApp%20Image%202026-08-07%20at%2020.42.54.jpeg" class="photo" alt="Biz">         
-            <p>
-                Hiçbir şeyi düşünmeden, olduğum gibi.
-            </p>
+        <p>
+            Belki de asıl söylemek istediğim şey bu.
+        </p>
 
-            <p>
-                Ve içimin garip bir şekilde huzurla dolması.
-            </p>
+        <p>
+            Sana yeterince değer vermediğimi düşündürdüysem, bunu bilmeni istiyorum:
+        </p>
 
-            <p>
-                Mesela bir keresinde çok yağmur yağıyordu.
-                Arabanın camları açıktı, yolda gidiyorduk.
-                Yanımızdan bir araba hızlı geçti ve bütün arabanın içi çamurlu yağmur suyuyla doldu.
-            </p>
-
-            <p>
-                Sinirli olmamız gerekiyordu fakat biz gülmekten kendimizi alamamıştık.
-            </p>
-
-            <p>
-                Şimdi düşününce, sanırım bizim en güzel taraflarımızdan biri de buydu.
-            </p>
-
-            <p>
-                En saçma anlarda bile birlikte gülebilmek.
-            </p>
-
-            <p>
-                Belki dışarıdan bakınca çok büyük şeyler değiller.
-            </p>
-
-            <p>
-                Ama benim için değerli olan da biraz bu zaten.
-            </p>
-
-            <p>
-                Seninle yaşadığım en sıradan anların bile bende bir karşılığı var.
-            </p>
-
-            <p>
-                Ve dönüp baktığımda...
-            </p>
-
-            <div class="highlight">İyi ki yaşamışız.</div>
-
-            <button class="button" onclick="nextPage()">Devam et →</button>
+        <div class="highlight">
+            Ben sana hiçbir zaman az değer vermedim.
         </div>
-    </section>
 
+        <p>
+            Aksine, seni hayatımda olduğun ilk günden beri hep çok önemsedim.
+        </p>
 
-    <!-- 03 -->
-    <section class="page">
-        <div class="content">
-            <h2>Bazı şeyleri doğru yapamadım.</h2>
+        <p>
+            Her zaman yanında olmaya çalıştım.
+        </p>
 
-            <p>
-                Belki de asıl söylemek istediğim şey bu.
-            </p>
+        <p>
+            Seni düşündüm, seni hissettim, elimden gelenin en iyisini yapmaya çalıştım.
+        </p>
 
-            <p>
-                Sana yeterince değer vermediğimi düşündürdüysem, bunu bilmeni istiyorum:
-            </p>
+        <p>
+            Çünkü sen benim için her zaman çok daha fazlasıydın.
+        </p>
 
-            <div class="highlight">Ben sana hiçbir zaman az değer vermedim.</div>
+        <p>
+            Bazen seni yanlış anladım, evet.
+        </p>
 
-            <p>
-                Aksine, seni hayatımda olduğun ilk günden beri hep çok önemsedim.
-            </p>
+        <p>
+            Bazen aklından geçenleri, ne hissettiğini ya da benden ne beklediğini tam olarak anlayamadım.
+        </p>
 
-            <p>
-                Her zaman yanında olmaya çalıştım.
-            </p>
+        <p>
+            Ama anlamadığım yerde bile hiçbir zaman çabalamaktan vazgeçmedim.
+        </p>
 
-            <p>
-                Seni düşündüm, seni hissettim, elimden gelenin en iyisini yapmaya çalıştım.
-            </p>
+        <p>
+            Bana ne yapmam gerektiğini söylediğini de biliyorum.
+        </p>
 
-            <p>
-                Çünkü sen benim için her zaman çok daha fazlasıydın.
-            </p>
+        <p>
+            Belki bazı şeyleri daha açık anlatmanı beklememeliydim.
+        </p>
 
-            <p>
-                Bazen seni yanlış anladım, evet.
-            </p>
+        <p>
+            Söylediklerini duydum, düşündüm ve elimden geldiğince yapmaya çalıştım.
+        </p>
 
-            <p>
-                Bazen aklından geçenleri, ne hissettiğini ya da benden ne beklediğini tam olarak anlayamadım.
-            </p>
+        <p>
+            Ama bazen bilmekle, karşındakinin hissettiği şeyi gerçekten anlayabilmek aynı şey olmuyor.
+        </p>
 
-            <p>
-                Ama anlamadığım yerde bile hiçbir zaman çabalamaktan vazgeçmedim.
-            </p>
+        <p>
+            Benim eksik kaldığım yer de belki tam olarak buydu.
+        </p>
 
-            <p>
-                Bana ne yapmam gerektiğini söylediğini de biliyorum.
-            </p>
+        <p>
+            Ne yapmam gerektiğini bilmediğim için değil...
+        </p>
 
-            <p>
-                Belki bazı şeyleri daha açık anlatmanı beklememeliydim.
-            </p>
-
-            <p>
-                Söylediklerini duydum, düşündüm ve elimden geldiğince yapmaya çalıştım.
-            </p>
-
-            <p>
-                Ama bazen bilmekle, karşındakinin hissettiği şeyi gerçekten anlayabilmek aynı şey olmuyor.
-            </p>
-
-            <p>
-                Benim eksik kaldığım yer de belki tam olarak buydu.
-            </p>
-
-            <p>
-                Ne yapmam gerektiğini bilmediğim için değil...
-            </p>
-
-            <div class="highlight">
-                Seni her zaman, her durumda tam olarak anlayamadığım için.
-            </div>
-
-            <p>
-                Ama şunu hiç değiştirmedi:
-            </p>
-
-            <p>
-                Seni anlamaya çalışmaktan, yanında olmaktan ve senin için elimden gelenin en iyisini yapmaktan hiçbir zaman vazgeçmedim.
-            </p>
-
-            <p>
-                Belki her zaman doğru şeyi yapamadım.
-            </p>
-
-            <p>
-                Belki bazen sana ihtiyacın olan şekilde karşılık veremedim.
-            </p>
-
-            <p>
-                Ama hiçbir zaman seni önemsemediğimden değildi.
-            </p>
-
-            <div class="highlight">
-                Düşüncelerim de duygularım da hiçbir zaman değişmedi.
-            </div>
-
-            <p>
-                Her zaman kalbimde ve düşüncelerimde sen vardın.
-            </p>
-
-            <p>
-                Elimden gelenin en iyisini yapmaya çalıştım.
-            </p>
-
-            <p>
-                Çünkü sen her şeyin en iyisini hak ediyorsun.
-            </p>
-
-            <p>
-                Belki benim eksik kaldığım yer, seni ne kadar sevdiğim değil...
-            </p>
-
-            <div class="highlight">
-                Seni her zaman, her durumda doğru şekilde anlayabilmekti.
-            </div>
-
-            <p>
-                Ve bunun için gerçekten üzgünüm.
-            </p>
-
-            <button class="button" onclick="nextPage()">Devam et →</button>
+        <div class="highlight">
+            Seni her zaman, her durumda tam olarak anlayamadığım için.
         </div>
-    </section>
 
+        <p>
+            Ama şunu hiç değiştirmedi:
+        </p>
 
-    <!-- 04 -->
-    <section class="page">
-        <div class="content">
-            <h2>Ama mesele sadece özür değil.</h2>
+        <p>
+            Seni anlamaya çalışmaktan, yanında olmaktan ve senin için elimden gelenin en iyisini yapmaktan hiçbir zaman vazgeçmedim.
+        </p>
 
-            <p>
-                Çünkü sana sadece özür dilemek için yazmıyorum.
-            </p>
+        <p>
+            Belki her zaman doğru şeyi yapamadım.
+        </p>
 
-            <p>
-                Bütün bunları anlatmamın asıl sebebi, sana ne kadar değer verdiğimi bir kez daha söylemek istemem.
-            </p>
+        <p>
+            Belki bazen sana ihtiyacın olan şekilde karşılık veremedim.
+        </p>
 
-            <p>
-                Sen benim için sadece birlikte olduğum biri olmadın.
-            </p>
+        <p>
+            Ama hiçbir zaman seni önemsemediğimden değildi.
+        </p>
 
-            <p>
-                Ben seni hep hayat arkadaşım olarak gördüm.
-            </p>
-
-            <p>
-                Yanında kendim olabildiğim, hayatımı paylaşmak istediğim,
-                iyi günlerimi de kötü günlerimi de birlikte yaşamak istediğim insan olarak.
-            </p>
-
-            <p>
-                Belki bunu her zaman en doğru şekilde gösteremedim.
-            </p>
-
-            <p>
-                Ama hissettiğim şey hiçbir zaman değişmedi.
-            </p>
-
-            <p>
-                Bazen seni düşündüğümde aklıma büyük şeyler gelmiyor.
-            </p>
-
-            <p>
-                Birlikte güldüğümüz saçma şeyler geliyor.
-            </p>
-
-            <p>
-                Yağmur geliyor.
-            </p>
-
-            <p>
-                Yanında hiçbir şey düşünmeden kendim olabildiğim o huzur geliyor.
-            </p>
-
-            <p>
-                Ve sonra gözlerine âşık olduğum o kadın geliyor aklıma.
-            </p>
-
-            <div class="highlight">Buse.</div>
-
-            <p>
-                Ben seni sadece güzel günlerimin bir parçası olarak görmedim.
-            </p>
-
-            <p>
-                Hayatımın kendisini seninle paylaşmak istedim.
-            </p>
-
-            <p>
-                Belki bazı şeyleri her zaman doğru yapamadım.
-            </p>
-
-            <p>
-                Ama sana olan sevgimden ve verdiğim değerden hiçbir zaman şüphe etmedim.
-            </p>
-
-            <div class="highlight">
-                Çünkü sen benim için her zaman ve sonsuza dek hayat arkadaşım dediğim kadınsın.
-            </div>
-
-            <button class="button" onclick="nextPage()">Devam et →</button>
+        <div class="highlight">
+            Düşüncelerim de duygularım da hiçbir zaman değişmedi.
         </div>
-    </section>
 
+        <p>
+            Her zaman kalbimde ve düşüncelerimde sen vardın.
+        </p>
 
-    <!-- 05 -->
-    <section class="page">
-        <div class="content">
-            <h2>Bazı şeyler.</h2>
+        <p>
+            Elimden gelenin en iyisini yapmaya çalıştım.
+        </p>
 
-            <p>
-                İnsan bazen sahip olduğu şeyin değerini sessizlikte daha iyi anlıyor.
-            </p>
+        <p>
+            Çünkü sen her şeyin en iyisini hak ediyorsun.
+        </p>
 
-            <p>
-                Son zamanlarda çok düşündüm.
-            </p>
+        <p>
+            Belki benim eksik kaldığım yer, seni ne kadar sevdiğim değil...
+        </p>
 
-            <p>
-                Seni düşündüm.
-            </p>
-
-            <p>
-                Bizi düşündüm.
-            </p>
-
-            <p>
-                Birlikte geçirdiğimiz zamanı, birbirimize kattıklarımızı,
-                beraber değiştiğimiz şeyleri...
-            </p>
-
-            <p>
-                Ve fark ettim ki benim için önemli olan sadece güzel günler değil.
-            </p>
-
-            <p>
-                Seninle hayatın her halini paylaşabilmek.
-            </p>
-
-            <p>
-                Bazen gülmek, bazen susmak.
-            </p>
-
-            <p>
-                Bazen hiçbir şey yapmadan yan yana oturmak.
-            </p>
-
-            <p>
-                Bazen de her şey yolunda gitmediğinde birbirimizin yanında kalabilmek.
-            </p>
-
-            <p>
-                Ben senden kusursuz bir şey beklemedim.
-            </p>
-
-            <p>
-                Sen de benden kusursuz olmamı beklememelisin.
-            </p>
-
-            <p>
-                Çünkü ikimiz de insanız.
-            </p>
-
-            <p>
-                Hata yapıyoruz, yanlış anlıyoruz, bazen birbirimizi kırıyoruz.
-            </p>
-
-            <p>
-                Ama bütün bunların arasında benim bildiğim bir şey var:
-            </p>
-
-            <div class="highlight">Ben seni istedim.</div>
-
-            <p>
-                Ve seni istediğim için hiçbir zaman pişman olmadım.
-            </p>
-
-            <p>
-                Geleceği düşündüğümde aklıma ilk gelen şeylerden biri bir pazar sabahı.
-            </p>
-
-            <p>
-                Saat daha on.
-            </p>
-
-            <p>
-                Sen hâlâ uyuyorsun.
-            </p>
-
-            <p>
-                Ben senden önce uyanmışım. Sessizce kahvaltıyı hazırlamışım,
-                sana bir latte yapmışım.
-            </p>
-
-            <p>
-                Sonra yanına gelip seni bir öpücükle uyandırıyorum.
-            </p>
-
-            <p>
-                Sen daha gözlerini yeni açmışken sana sadece,
-            </p>
-
-            <div class="highlight">“Sana kahve yaptım.”</div>
-
-            <p>
-                diyorum.
-            </p>
-
-            <p>
-                Benim istediğim gelecek biraz da böyle.
-            </p>
-
-            <p>
-                Senin yanında uyanmak, sana kahve yapmak, birlikte kahvaltı etmek.
-            </p>
-
-            <p>
-                Hayatı seninle paylaşmak.
-            </p>
-
-            <p>
-                Sabahları, akşamları, güzel günleri ve zor günleri.
-            </p>
-
-            <p>
-                Çünkü benim istediğim hayatın içinde sen varsın.
-            </p>
-
-            <button class="button" onclick="nextPage()">Devam et →</button>
+        <div class="highlight">
+            Seni her zaman, her durumda doğru şekilde anlayabilmekti.
         </div>
-    </section>
+
+        <p>
+            Ve bunun için gerçekten üzgünüm.
+        </p>
+
+        <button class="button" onclick="nextPage()">
+            Devam et →
+        </button>
+
+    </div>
+
+</section>
 
 
-    <!-- 06 -->
-    <section class="page">
-        <div class="content">
-            <h2>Her halinde.</h2>
+<!-- ========================= -->
+<!-- 04 -->
+<!-- ========================= -->
 
-            <p>
-                Ben sadece güzel günlerini istemiyorum.
-            </p>
+<section class="page">
 
-            <p>
-                Senin güldüğün günlerde yanında olmak kolay.
-            </p>
+    <div class="content">
 
-            <p>
-                Her şey yolundayken elini tutmak da.
-            </p>
+        <h2>Ama mesele sadece özür değil.</h2>
 
-            <p>
-                Ben senin zor günlerinde de yanında olmak istiyorum.
-            </p>
+        <p>
+            Çünkü sana sadece özür dilemek için yazmıyorum.
+        </p>
 
-            <p>
-                Canın yandığında, kafan karıştığında, kendini kötü hissettiğinde...
-            </p>
+        <p>
+            Bütün bunları anlatmamın asıl sebebi, sana ne kadar değer verdiğimi bir kez daha söylemek istemem.
+        </p>
 
-            <p>
-                Konuşmak istediğinde de susmak istediğinde de.
-            </p>
+        <p>
+            Sen benim için sadece birlikte olduğum biri olmadın.
+        </p>
 
-            <p>
-                Hastalıkta da sağlıkta da.
-            </p>
+        <p>
+            Ben seni hep hayat arkadaşım olarak gördüm.
+        </p>
 
-            <p>
-                İyi günde de kötü günde de.
-            </p>
+        <p>
+            Yanında kendim olabildiğim, hayatımı paylaşmak istediğim,
+            iyi günlerimi de kötü günlerimi de birlikte yaşamak istediğim insan olarak.
+        </p>
 
-            <p>
-                Çünkü benim için hayat arkadaşlığı sadece güzel günleri paylaşmak değil.
-            </p>
+        <p>
+            Belki bunu her zaman en doğru şekilde gösteremedim.
+        </p>
 
-            <p>
-                Hayatın getirdiği her şeyi birlikte karşılayabilmek.
-            </p>
+        <p>
+            Ama hissettiğim şey hiçbir zaman değişmedi.
+        </p>
 
-            <p>
-                Bazen seni anlayamasam bile anlamaya çalışmak.
-            </p>
+        <p>
+            Bazen seni düşündüğümde aklıma büyük şeyler gelmiyor.
+        </p>
 
-            <p>
-                Bazen doğru kelimeyi bulamasam bile yanında kalmak.
-            </p>
+        <p>
+            Birlikte güldüğümüz saçma şeyler geliyor.
+        </p>
 
-            <p>
-                Bazen hiçbir şeyi düzeltemesem bile elini bırakmamak.
-            </p>
+        <p>
+            Yağmur geliyor.
+        </p>
 
-            <p>
-                Çünkü ben kendimi sende buldum.
-            </p>
+        <p>
+            Yanında hiçbir şey düşünmeden kendim olabildiğim o huzur geliyor.
+        </p>
 
-            <div class="highlight">Ve mutluluğum sen oldun.</div>
+        <p>
+            Ve sonra gözlerine âşık olduğum o kadın geliyor aklıma.
+        </p>
 
-            <p>
-                Ben senden kusursuz bir hayat istemiyorum.
-            </p>
-
-            <p>
-                Seninle gerçek bir hayat istiyorum.
-            </p>
-
-            <p>
-                İçinde güzel sabahların da olsun, zor günlerin de.
-            </p>
-
-            <p>
-                Ama ne olursa olsun, o hayatın içinde elini tutabileyim.
-            </p>
-
-            <div class="highlight">
-                Her türlü karanlıkta elimi sana uzatmaktan bir saniye vazgeçmeyeceğim.
-            </div>
-
-            <button class="button" onclick="nextPage()">Devam et →</button>
+        <div class="highlight">
+            Buse.
         </div>
-    </section>
 
+        <p>
+            Ben seni sadece güzel günlerimin bir parçası olarak görmedim.
+        </p>
 
-    <!-- 07 -->
-    <section class="page">
-        <div class="content">
-            <h2>Son bir şey.</h2>
+        <p>
+            Hayatımın kendisini seninle paylaşmak istedim.
+        </p>
 
-            <p>
-                Biliyorum.
-            </p>
+        <p>
+            Belki bazı şeyleri her zaman doğru yapamadım.
+        </p>
 
-            <p>
-                Yanlışlar yapıldı.
-            </p>
+        <p>
+            Ama sana olan sevgimden ve verdiğim değerden hiçbir zaman şüphe etmedim.
+        </p>
 
-            <p>
-                Yapılmaması gereken şeyler oldu.
-            </p>
-
-            <p>
-                Bunun farkındayım, farkındayız.
-            </p>
-
-            <p>
-                Ama bütün bunların içinde bilmeni istediğim bir şey var.
-            </p>
-
-            <p>
-                Kalbim de zihnim de her zaman senin için en iyisini yapmaya odaklıydı.
-            </p>
-
-            <p>
-                Bazen doğruyu bulamadım.
-            </p>
-
-            <p>
-                Bazen seni tam olarak anlayamadım.
-            </p>
-
-            <p>
-                Ama seni düşünmekten, senin için en iyisini istemekten
-                ve elimden geleni yapmaktan hiçbir zaman vazgeçmedim.
-            </p>
-
-            <p>
-                Çünkü benim için bütün bunların ötesinde sen varsın.
-            </p>
-
-            <p>
-                Seninle geçirdiğim her gün, her an, her küçük şey...
-            </p>
-
-            <p>
-                Hepsi bizim hikâyemizin bir parçası.
-            </p>
-
-            <p>
-                Ve ben bu hikâyenin her gün biraz daha büyüyerek devam etmesini istiyorum.
-            </p>
-
-            <p>
-                Her günde, her zaman, hep birlikte...
-            </p>
-
-            <div class="highlight">
-                Hikâyemiz sonsuza kadar devam edecek,
-                yağmurlarda tanıştığım o turuncu saçlı kız. 🤍
-            </div>
+        <div class="highlight">
+            Çünkü sen benim için her zaman ve sonsuza dek hayat arkadaşım dediğim kadınsın.
         </div>
-    </section>
+
+        <button class="button" onclick="nextPage()">
+            Devam et →
+        </button>
+
+    </div>
+
+</section>
 
 
-    <script>
-        let currentPage = 0;
-        const pages = document.querySelectorAll(".page");
+<!-- ========================= -->
+<!-- 05 -->
+<!-- ========================= -->
 
-        function nextPage() {
-            if (currentPage < pages.length - 1) {
-                pages[currentPage].classList.remove("active");
-                currentPage++;
-                pages[currentPage].classList.add("active");
-                window.scrollTo(0, 0);
-            }
+<section class="page">
+
+    <div class="content">
+
+        <h2>Bazı şeyler.</h2>
+
+        <p>
+            İnsan bazen sahip olduğu şeyin değerini sessizlikte daha iyi anlıyor.
+        </p>
+
+        <p>
+            Son zamanlarda çok düşündüm.
+        </p>
+
+        <p>
+            Seni düşündüm.
+        </p>
+
+        <p>
+            Bizi düşündüm.
+        </p>
+
+        <p>
+            Birlikte geçirdiğimiz zamanı, birbirimize kattıklarımızı,
+            beraber değiştiğimiz şeyleri...
+        </p>
+
+        <p>
+            Ve fark ettim ki benim için önemli olan sadece güzel günler değil.
+        </p>
+
+        <p>
+            Seninle hayatın her halini paylaşabilmek.
+        </p>
+
+        <p>
+            Bazen gülmek, bazen susmak.
+        </p>
+
+        <p>
+            Bazen hiçbir şey yapmadan yan yana oturmak.
+        </p>
+
+        <p>
+            Bazen de her şey yolunda gitmediğinde birbirimizin yanında kalabilmek.
+        </p>
+
+        <p>
+            Ben senden kusursuz bir şey beklemedim.
+        </p>
+
+        <p>
+            Sen de benden kusursuz olmamı beklememelisin.
+        </p>
+
+        <p>
+            Çünkü ikimiz de insanız.
+        </p>
+
+        <p>
+            Hata yapıyoruz, yanlış anlıyoruz, bazen birbirimizi kırıyoruz.
+        </p>
+
+        <p>
+            Ama bütün bunların arasında benim bildiğim bir şey var:
+        </p>
+
+        <div class="highlight">
+            Ben seni istedim.
+        </div>
+
+        <p>
+            Ve seni istediğim için hiçbir zaman pişman olmadım.
+        </p>
+
+        <p>
+            Geleceği düşündüğümde aklıma ilk gelen şeylerden biri bir pazar sabahı.
+        </p>
+
+        <p>
+            Saat daha on.
+        </p>
+
+        <p>
+            Sen hâlâ uyuyorsun.
+        </p>
+
+        <p>
+            Ben senden önce uyanmışım. Sessizce kahvaltıyı hazırlamışım,
+            sana bir latte yapmışım.
+        </p>
+
+        <p>
+            Sonra yanına gelip seni bir öpücükle uyandırıyorum.
+        </p>
+
+        <p>
+            Sen daha gözlerini yeni açmışken sana sadece,
+        </p>
+
+        <div class="highlight">
+            “Sana kahve yaptım.”
+        </div>
+
+        <p>
+            diyorum.
+        </p>
+
+        <p>
+            Benim istediğim gelecek biraz da böyle.
+        </p>
+
+        <p>
+            Senin yanında uyanmak, sana kahve yapmak, birlikte kahvaltı etmek.
+        </p>
+
+        <p>
+            Hayatı seninle paylaşmak.
+        </p>
+
+        <p>
+            Sabahları, akşamları, güzel günleri ve zor günleri.
+        </p>
+
+        <p>
+            Çünkü benim istediğim hayatın içinde sen varsın.
+        </p>
+
+        <button class="button" onclick="nextPage()">
+            Devam et →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 06 -->
+<!-- ========================= -->
+
+<section class="page">
+
+    <div class="content">
+
+        <h2>Her halinde.</h2>
+
+        <p>
+            Ben sadece güzel günlerini istemiyorum.
+        </p>
+
+        <p>
+            Senin güldüğün günlerde yanında olmak kolay.
+        </p>
+
+        <p>
+            Her şey yolundayken elini tutmak da.
+        </p>
+
+        <p>
+            Ben senin zor günlerinde de yanında olmak istiyorum.
+        </p>
+
+        <p>
+            Canın yandığında, kafan karıştığında, kendini kötü hissettiğinde...
+        </p>
+
+        <p>
+            Konuşmak istediğinde de susmak istediğinde de.
+        </p>
+
+        <p>
+            Hastalıkta da sağlıkta da.
+        </p>
+
+        <p>
+            İyi günde de kötü günde de.
+        </p>
+
+        <p>
+            Çünkü benim için hayat arkadaşlığı sadece güzel günleri paylaşmak değil.
+        </p>
+
+        <p>
+            Hayatın getirdiği her şeyi birlikte karşılayabilmek.
+        </p>
+
+        <p>
+            Bazen seni anlayamasam bile anlamaya çalışmak.
+        </p>
+
+        <p>
+            Bazen doğru kelimeyi bulamasam bile yanında kalmak.
+        </p>
+
+        <p>
+            Bazen hiçbir şeyi düzeltemesem bile elini bırakmamak.
+        </p>
+
+        <p>
+            Çünkü ben kendimi sende buldum.
+        </p>
+
+        <div class="highlight">
+            Ve mutluluğum sen oldun.
+        </div>
+
+        <p>
+            Ben senden kusursuz bir hayat istemiyorum.
+        </p>
+
+        <p>
+            Seninle gerçek bir hayat istiyorum.
+        </p>
+
+        <p>
+            İçinde güzel sabahların da olsun, zor günlerin de.
+        </p>
+
+        <p>
+            Ama ne olursa olsun, o hayatın içinde elini tutabileyim.
+        </p>
+
+        <div class="highlight">
+            Her türlü karanlıkta elimi sana uzatmaktan bir saniye vazgeçmeyeceğim.
+        </div>
+
+        <button class="button" onclick="nextPage()">
+            Devam et →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- 07 -->
+<!-- ========================= -->
+
+<section class="page">
+
+    <div class="content final">
+
+        <h2>Son bir şey.</h2>
+
+        <p>
+            Biliyorum.
+        </p>
+
+        <p>
+            Yanlışlar yapıldı.
+        </p>
+
+        <p>
+            Yapılmaması gereken şeyler oldu.
+        </p>
+
+        <p>
+            Bunun farkındayım, farkındayız.
+        </p>
+
+        <p>
+            Ama bütün bunların içinde bilmeni istediğim bir şey var.
+        </p>
+
+        <p>
+            Kalbim de zihnim de her zaman senin için en iyisini yapmaya odaklıydı.
+        </p>
+
+        <p>
+            Bazen doğruyu bulamadım.
+        </p>
+
+        <p>
+            Bazen seni tam olarak anlayamadım.
+        </p>
+
+        <p>
+            Ama seni düşünmekten, senin için en iyisini istemekten
+            ve elimden geleni yapmaktan hiçbir zaman vazgeçmedim.
+        </p>
+
+        <p>
+            Çünkü benim için bütün bunların ötesinde sen varsın.
+        </p>
+
+        <p>
+            Seninle geçirdiğim her gün, her an, her küçük şey...
+        </p>
+
+        <p>
+            Hepsi bizim hikâyemizin bir parçası.
+        </p>
+
+        <p>
+            Ve ben bu hikâyenin her gün biraz daha büyüyerek devam etmesini istiyorum.
+        </p>
+
+        <p>
+            Her günde, her zaman, hep birlikte...
+        </p>
+
+        <div class="highlight">
+            Hikâyemiz sonsuza kadar devam edecek,
+            yağmurlarda tanıştığım o turuncu saçlı kız. 🤍
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+    let currentPage = 0;
+
+    const pages = document.querySelectorAll(".page");
+
+    function nextPage() {
+
+        if (currentPage < pages.length - 1) {
+
+            pages[currentPage].classList.remove("active");
+
+            currentPage++;
+
+            pages[currentPage].classList.add("active");
+
+            window.scrollTo(0, 0);
         }
-    </script>
+    }
+
+</script>
 
 </body>
 </html>
-```
