@@ -5,12 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buse'me, hayatıma...</title>
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
 
+.hearts span {
+    position: absolute;
+    color: rgba(255, 245, 248, 0.28);
+    font-size: 16px;
+    animation: floatHeart 8s ease-in-out infinite;
+}
+
+.hearts span:nth-child(1) { left: 8%; top: 15%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 18%; top: 72%; animation-delay: 1s; }
+.hearts span:nth-child(3) { left: 31%; top: 28%; animation-delay: 2s; }
+.hearts span:nth-child(4) { left: 44%; top: 82%; animation-delay: 3s; }
+.hearts span:nth-child(5) { left: 57%; top: 12%; animation-delay: 1.5s; }
+.hearts span:nth-child(6) { left: 68%; top: 65%; animation-delay: 2.5s; }
+.hearts span:nth-child(7) { left: 79%; top: 30%; animation-delay: 4s; }
+.hearts span:nth-child(8) { left: 91%; top: 78%; animation-delay: 3.5s; }
+.hearts span:nth-child(9) { left: 12%; top: 45%; animation-delay: 5s; }
+.hearts span:nth-child(10) { left: 38%; top: 55%; animation-delay: 4.5s; }
+.hearts span:nth-child(11) { left: 73%; top: 48%; animation-delay: 6s; }
+.hearts span:nth-child(12) { left: 86%; top: 10%; animation-delay: 2s; }
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+        opacity: 0.4;
+    }
+}
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            
         }
 
         body {
@@ -19,6 +58,20 @@
             background: #d9a6b3;
             color: #fff8fa;
             overflow: hidden;
+            <div class="hearts">
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+</div>
         }
 
         .page {
